@@ -137,7 +137,6 @@ function DataTable({
 			table_edit = user.cargo.prospects;
 		}
 
-
 		setCan_edit(user.powers === "admin" || table_edit === "view_edit");
 
 		// eslint-disable-next-line
@@ -363,7 +362,6 @@ function Row({
 
 	const navigate = useNavigate();
 
-
 	return (
 		<tr className="table-row">
 			{!list && (
@@ -410,15 +408,17 @@ function Row({
 					key={i}
 				>
 					{r[key]
-						? key === "arrived" ||
-						  key === "berthed" ||
+						? (key === "arrived" && !list) ||
+						  (key === "berthed" && !list) ||
 						  key === "etcd" ||
-						  key === "offer_bid" ||
-						  key === "sailed"
+						  key === "offer_bid"
 							? dateFormat(r[key], "dd/mm/yy @ HH:MM") + " Hrs"
 							: key === "enq_date" ||
+							  (key === "arrived" && list) || // for competitors vessels
+							  (key === "berthed" && list) || // for competitors vessels
 							  key === "start_date" ||
-							  key === "target_date"
+							  key === "target_date" ||
+							  key === "sailed"
 							? dateFormat(r[key], "dd/mm/yy")
 							: key === "month"
 							? dateFormat(r[key], "mmm yy")

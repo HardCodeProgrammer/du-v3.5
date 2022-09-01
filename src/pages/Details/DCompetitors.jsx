@@ -10,7 +10,7 @@ import {
 	Tooltip,
 } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import { DesktopDatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -254,7 +254,7 @@ function DCompetitors() {
 								onChange={(e) => setData({ ...data, dwt: e.target.value })}
 							/>
 
-							<DateTimePicker
+							<DesktopDatePicker
 								disabled={processing}
 								clearable
 								variant="dialog"
@@ -267,11 +267,11 @@ function DCompetitors() {
 										arrived: date || null,
 									});
 								}}
-								inputFormat="dd/MM/yyyy HH:mm"
+								inputFormat="dd/MM/yyyy"
 								renderInput={(params) => <TextField {...params} />}
 							/>
 
-							<DateTimePicker
+							<DesktopDatePicker
 								disabled={processing}
 								clearable
 								variant="dialog"
@@ -284,11 +284,11 @@ function DCompetitors() {
 										berthed: date || null,
 									});
 								}}
-								inputFormat="dd/MM/yyyy HH:mm"
+								inputFormat="dd/MM/yyyy"
 								renderInput={(params) => <TextField {...params} />}
 							/>
 
-							<DateTimePicker
+							<DesktopDatePicker
 								disabled={processing}
 								clearable
 								variant="dialog"
@@ -301,7 +301,7 @@ function DCompetitors() {
 										sailed: date || null,
 									});
 								}}
-								inputFormat="dd/MM/yyyy HH:mm"
+								inputFormat="dd/MM/yyyy"
 								renderInput={(params) => <TextField {...params} />}
 							/>
 
