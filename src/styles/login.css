@@ -1,0 +1,123 @@
+/* Left Side */
+
+.login-left {
+	width: 55%;
+	display: flex;
+	flex-direction: column;
+	color: white;
+	background: #1261aa;
+}
+
+.login-left-header {
+	height: 30%;
+	padding-top: 40px;
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+
+	line-height: 15px;
+}
+
+.login-left-header p {
+	font-family: "Roboto";
+}
+
+.login-gif-container {
+	width: 100%;
+	height: 70%;
+	background-image: url("../assets/images/Login.webp");
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.forgot-pass-header {
+	width: 100%;
+	text-align: center;
+	color: white;
+	background-color: #2d84d6;
+}
+
+/* Right side */
+
+.login-right {
+	width: 45%;
+	height: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+
+	justify-content: center;
+	align-items: center;
+}
+
+@media only screen and (max-width: 750px) {
+	.login-right {
+		width: 100%;
+	}
+
+	.login-left {
+		display: none;
+	}
+}
+
+.login-header {
+	width: 100%;
+	height: 30%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.login-header-imgs {
+	height: 30%;
+	width: 100%;
+	display: flex;
+	gap: 40px;
+	align-items: center;
+	justify-content: center;
+}
+
+.login-header-imgs img {
+	width: 100px;
+	height: 80px;
+}
+
+.login-form {
+	width: 100%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+}
+
+.login-username,
+.login-pass {
+	width: 70%;
+}
+
+.log-pass-contents {
+	display: flex;
+	font-size: 14px;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.password {
+	display: flex;
+}
+
+.profile {
+	gap: 30px;
+}

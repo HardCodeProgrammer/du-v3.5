@@ -1,0 +1,248 @@
+.app-bar {
+	width: 100%;
+	height: 55px;
+
+	display: flex;
+	background-color: #e4e4e4;
+	border: 1px solid rgb(219, 219, 219);
+	border-bottom: none;
+	border-radius: 5px;
+
+	align-items: center;
+
+	gap: 10px;
+
+	overflow-x: auto;
+	overflow-y: auto;
+
+	scroll-behavior: smooth;
+
+	cursor: pointer;
+}
+
+.app-bar::-webkit-scrollbar {
+	height: 7px;
+}
+
+.app-bar::-webkit-scrollbar-thumb {
+	background-color: rgb(155, 155, 155);
+	border-radius: 2px;
+}
+
+.app-bar-tab:hover {
+	opacity: 0.2;
+}
+
+.app-bar-tab {
+	height: 100%;
+	min-width: max-content;
+	display: flex;
+	align-items: center;
+
+	padding: 20px;
+	font-size: 15px;
+	transition: all 0.2s ease-in-out;
+}
+
+.active-tab {
+	background-color: white;
+	font-weight: bold;
+	
+}
+
+.active-tab:hover {
+	opacity: 1;
+}
+
+.table-container {
+	width: 100%;
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+}
+
+.table-wrapper {
+	width: 100%;
+	min-height: 31%;
+	max-height: 100%;
+	margin-top: 5px;
+}
+
+.table-head {
+	width: 100%;
+	background-color: #3575b1;
+	flex-wrap: wrap;
+	color: white;
+	height: min-content;
+	z-index: 10;
+
+	font-size: 13px;
+	font-weight: bold;
+	display: flex;
+
+	justify-content: space-between;
+	align-items: center;
+
+	position: sticky;
+	top: 0px;
+}
+
+.table-header-txt {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.table-search {
+	min-width: 20%;
+	height: 100%;
+
+	display: flex;
+	align-items: center;
+
+	padding-left: 10px;
+
+	gap: 10px;
+}
+
+.search-txt-box {
+	width: 180px;
+	height: 99%;
+	color: white;
+	background-color: #3575b1;
+
+	outline: none;
+	border: none;
+
+	transition: all 0.2s ease-in-out;
+}
+
+.search-txt-box:focus {
+	border-bottom: 1px solid rgb(0, 183, 255);
+}
+
+.search-txt-box::placeholder {
+	color: white;
+}
+
+.table-icon {
+	width: 22px;
+	height: 25px;
+}
+
+.table-header-txt {
+	height: 100%;
+	width: 65%;
+	display: flex;
+	justify-content: center;
+
+	text-align: center;
+}
+
+.table-head-btns {
+	min-width: 15%;
+	height: 100%;
+	display: flex;
+
+	justify-content: space-around;
+
+	padding-right: 10px;
+}
+
+.table {
+	min-width: 100%;
+	height: 90%;
+
+	padding: 0px;
+
+	border: none;
+	outline: none;
+
+	text-align: center;
+	font-size: 13px;
+
+	color: rgb(139, 139, 139);
+	overflow: auto;
+}
+
+table {
+	min-width: 100%;
+	border-collapse: collapse;
+	color: black;
+}
+
+.table thead {
+	width: 100%;
+	color: white;
+	background: #0481c7;
+	z-index: 10;
+
+	position: sticky;
+	top: 0px;
+
+	font-family: "Poppins";
+	font-weight: bold;
+
+	font-size: 13px;
+
+	border: none;
+	outline: none;
+}
+
+.table th {
+	padding: 5px 0px;
+}
+
+.table {
+	width: 100%;
+}
+
+.table-row {
+	cursor: pointer;
+}
+
+.table-row td {
+	border-bottom: 1px solid #dddddd;
+	text-align: center;
+	font-family: "Roboto";
+	font-size: 12px;
+	max-width: 1050px;
+	min-width: 100px;
+
+	padding: 2px;
+}
+
+.table-row:hover {
+	background-color: #e9e9e9;
+}
+
+.red {
+	background-color: tomato;
+}
+
+.yellow {
+	background-color: yellow;
+}
+
+.green {
+	background-color: lightgreen;
+}
+
+.none {
+	background-color: rgb(218, 218, 218);
+}
+
+.status-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 35px;
+	width: 35px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.table-half {
+	min-height: 50%;
+}

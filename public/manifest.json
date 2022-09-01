@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Daily Updates",
+  "name": "Daily Updates and Vessel Status",
   "icons": [
     {
       "src": "favicon.ico",

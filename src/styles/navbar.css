@@ -1,0 +1,151 @@
+.navbar {
+	width: 50px;
+	height: 95%;
+	top: 20px;
+	left: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.3s ease-in-out;
+	position: absolute;
+	z-index: 100;
+}
+
+.nav-extend {
+	position: absolute;
+	top: 45%;
+	left: 48px;
+	background-color: #569cdd;
+	width: 35px;
+	height: 70px;
+	border-radius: 0px 150px 150px 0px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease-in-out;
+}
+
+.nav-link {
+	width: 90%;
+	display: flex;
+}
+
+.nav-extend:hover {
+	transform: scale(0.93);
+}
+
+.nav-extend-extended {
+	left: 346px;
+}
+
+.nav-extend img {
+	position: relative;
+	margin-right: 5px;
+	width: 40px;
+	height: 40px;
+	transition: all 0.3s ease-in-out;
+}
+
+.nav-extend-extended img {
+	margin-right: 15px;
+	transform: rotate(180deg) !important;
+}
+
+.nav-container {
+	width: 100%;
+	height: 100%;
+	border-radius: 0px 10px 10px 0px;
+	background: linear-gradient(
+			180deg,
+			rgba(136, 194, 249, 0.2) -1.25%,
+			rgba(0, 0, 0, 0) 100%
+		),
+		#5098da;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	box-shadow: 0px 0px 6px rgb(5, 46, 104);
+}
+
+.nav-extended {
+	width: 350px;
+}
+
+.nav-item {
+	width: 95%;
+	display: flex;
+	cursor: pointer;
+	justify-content: space-between;
+	transition: all 0.1s ease-in-out;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.nav-item:hover {
+	background-color: #2b7cc7;
+}
+
+.nav-icon {
+	width: 25px;
+	height: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.nav-icon img {
+	width: 28px;
+	height: 28px;
+}
+
+.nav-txt {
+	display: none;
+	color: white;
+	width: 100%;
+	text-align: left;
+	padding-left: 30px;
+	transition: all 0.3s ease-in-out;
+	white-space: nowrap;
+	font-size: 14px;
+	font-family: "Roboto";
+	font-weight: 500;
+}
+
+.nav-txt-extended {
+	display: flex;
+	align-items: center;
+}
+
+@media only screen and (max-width: 750px) {
+	.navbar {
+		width: 0px;
+	}
+	.nav-extended {
+		width: 90%;
+	}
+
+	.nav-extend:hover {
+		transform: scale(1);
+	}
+
+	.nav-container {
+		display: none;
+	}
+
+	.nav-container-extended {
+		display: flex;
+	}
+
+	.nav-extend {
+		left: 0px;
+		transition: none;
+	}
+
+	.nav-extend-extended {
+		left: 90%;
+	}
+}
