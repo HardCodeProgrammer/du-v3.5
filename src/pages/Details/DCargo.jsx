@@ -179,7 +179,7 @@ function DCargo() {
 					window.sessionStorage.setItem("action", "Cargo Added successfully");
 					Neon.mail(
 						"no-reply@puyvast-dailyupdates.co.in",
-						["s.venkataramanain@gmail.com"],
+						["operations@puyvast.co.in"],
 						"Prudent@2512",
 						"Alert - New Cargo Enquiry",
 						CargoTemplate(

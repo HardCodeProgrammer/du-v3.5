@@ -13,6 +13,8 @@ function Archives() {
 	const competitors_data = useSelector(
 		(state) => state.root.data.archives.competitors
 	);
+	document.title = "Archives | Daily Updates";
+
 	// eslint-disable-next-line
 	const [action, setAction] = useState(window.sessionStorage.getItem("action"));
 	const query = useQuery();

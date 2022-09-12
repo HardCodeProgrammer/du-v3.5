@@ -39,11 +39,11 @@ function Forgot() {
 					"no-reply@puyvast-dailyupdates.co.in",
 					[users[user].email],
 					"Prudent@2512",
-					"Reset Link - Daily Updates",
+					"Alert - Change Password",
 					ForgotTemplate(
 						users[user].fullname,
 						ip,
-						`https://puyvast-dailyupdates.co.in/reset/${user}`
+						`https://www.puyvast-dailyupdates.co.in/reset/${user}`
 					)
 				).catch((_) => {
 					setSeverity("error");

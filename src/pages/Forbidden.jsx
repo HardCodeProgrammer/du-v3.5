@@ -7,6 +7,8 @@ import { Button } from "../components/Mui";
 
 function Forbidden() {
 	const navigate = useNavigate();
+	document.title = "Forbidden | Daily Updates";
+
 	return (
 		<div className="container vertical all-center">
 			<h2>Access Denied</h2>

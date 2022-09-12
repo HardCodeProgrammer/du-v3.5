@@ -491,9 +491,7 @@ function DeleteDialog({ open, target, name = "", onClose }) {
 		Neon.delete(`/${target}`)
 			.then((_) => {
 				dispatch(deleteData({ path: `${target}` }));
-				setTimeout(() => {
-					onClose();
-				}, 5000);
+				onClose();
 			})
 			.catch((_) => {
 				alert("Something went wrong :(");

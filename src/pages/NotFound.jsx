@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function NotFound() {
 	const navigate = useNavigate();
+	document.title = "Error 404 | Daily Updates";
+
 	return (
 		<div className="container vertical all-center">
 			<Lottie

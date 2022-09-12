@@ -21,6 +21,8 @@ function Login() {
 	const users = useSelector((state) => state.root.data.users);
 	const loading = useSelector((state) => state.root.meta.loading);
 	const navigate = useNavigate();
+	document.title = "Login | Daily Updates";
+
 
 	const [msg, setMsg] = useState(null);
 	const [visible, setVisible] = useState(false);

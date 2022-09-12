@@ -4,12 +4,13 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import "../styles/home.css";
 import Navbar from "../components/Navbar";
+import StatusBar from "../components/StatusBar";
 
 function Home() {
 	const id = window.sessionStorage.getItem("user");
 	const loading = useSelector((state) => state.root.meta.loading);
 	const user = useSelector((state) => state.root.data.users[id]);
-
+	document.title = "Daily Updates";
 
 	useEffect(() => {
 		if (id === null) {
@@ -52,9 +53,7 @@ function Home() {
 											<span>User Name</span>
 											<span>@</span>
 										</div>
-										<div className="home-detail-txt">
-											{user.username}
-										</div>
+										<div className="home-detail-txt">{user.username}</div>
 									</div>
 									<div className="home-detail">
 										<div className="home-detail-label">
@@ -111,7 +110,7 @@ function Home() {
 							</div>
 						</div>
 					</div>
-					<div className="status-bar"></div>
+					<StatusBar />
 				</div>
 			)}
 		</div>

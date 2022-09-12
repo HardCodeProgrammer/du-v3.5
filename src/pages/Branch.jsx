@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 
 function Branch() {
 	const data = useSelector((state) => state.root.data.branch_follow_ups);
+	document.title = "Branch Follow ups | Daily Updates";
+
 	// eslint-disable-next-line
 	const [action, setAction] = useState(window.sessionStorage.getItem("action"));
 

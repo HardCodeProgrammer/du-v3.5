@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 function Cargo() {
 	const data = useSelector((state) => state.root.data.cargo);
+	document.title = "Cargo Status | Daily Updates";
 	// eslint-disable-next-line
 	const [action, setAction] = useState(window.sessionStorage.getItem("action"));
 

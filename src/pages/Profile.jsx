@@ -21,6 +21,8 @@ import Neon from "../utils/api/neon";
 
 function Profile() {
 	const id = window.sessionStorage.getItem("user");
+	document.title = "Your Profile | Daily Updates";
+
 	const user = useSelector((state) => state.root.data.users[id]);
 	const loading = useSelector((state) => state.root.meta.loading);
 	const [edit, setEdit] = useState(false);

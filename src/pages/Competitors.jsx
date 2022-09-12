@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 
 function Competitors() {
 	const data = useSelector((state) => state.root.data.competitors);
+	document.title = "Competitors | Daily Updates";
+
 	// eslint-disable-next-line
 	const [action, setAction] = useState(window.sessionStorage.getItem("action"));
 

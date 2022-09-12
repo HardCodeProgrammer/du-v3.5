@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 
 function Vessels() {
 	const data = useSelector((state) => state.root.data.vessels);
+	document.title = "Vessel Status | Daily Updates";
+	
 	// eslint-disable-next-line
 	const [action, setAction] = useState(window.sessionStorage.getItem("action"));
 

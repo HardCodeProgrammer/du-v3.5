@@ -19,6 +19,7 @@ function Reset() {
 	const navigate = useNavigate();
 	const params = useParams();
 	const id = params.id;
+	document.title = "Reset Password | Daily Updates";
 
 	const [visible, setVisible] = useState(false);
 

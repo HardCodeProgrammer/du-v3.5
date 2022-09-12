@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 
 function HO() {
 	const data = useSelector((state) => state.root.data.ho_follow_ups);
+	document.title = "HO Follow ups | Daily Updates";
+
 	// eslint-disable-next-line
 	const [action, setAction] = useState(window.sessionStorage.getItem("action"));
 

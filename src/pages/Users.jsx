@@ -8,6 +8,8 @@ import { Alert, AlertTitle, Slide, Snackbar } from "@mui/material";
 
 function Users() {
 	const data = useSelector((state) => state.root.data.users);
+	document.title = "Users | Daily Updates";
+
 	// eslint-disable-next-line
 	const [action, setAction] = useState(window.sessionStorage.getItem("action"));
 
