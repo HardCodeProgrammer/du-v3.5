@@ -4,10 +4,10 @@ import React from "react";
 export default function StatusBar() {
 	return (
 		<div className="statusbar">
-			<p>
-				Daily Updates and Vessel Status v3.5 ©️ {dateFormat(new Date(), "yyyy")}
-			</p>
+			<p>Version: 3.5.1</p>
 			<div className="pLogo-container">
+				<img id="pLogo" src="./assets/images/pLogo.png" alt="" />
+
 				<p>
 					Designed and Developed by{" "}
 					<u>
@@ -18,10 +18,10 @@ export default function StatusBar() {
 							href="https://www.prudent-solutions.co.in"
 						>
 							Prudent Solutions
-						</a>
+						</a>{" "}
 					</u>{" "}
+					©️ {dateFormat(new Date(), "yyyy")}
 				</p>
-				<img id="pLogo" src="./assets/images/pLogo.png" alt="" />
 			</div>
 			<p>Status: 🟢 Connected</p>
 		</div>

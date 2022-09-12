@@ -140,7 +140,7 @@ function Profile() {
 
 							<div className="login-username">
 								<div className="placeholder">
-									<p>Username</p>
+									<p>User Name</p>
 								</div>
 								<div className="logininput">
 									<Input

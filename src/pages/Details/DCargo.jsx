@@ -326,7 +326,7 @@ function DCargo() {
 								/>
 								<TextField
 									disabled={processing}
-									label="Shipper / Charter"
+									label="Shipper / Charterer"
 									value={data.shipper}
 									onChange={(e) =>
 										setData({ ...data, shipper: e.target.value })
@@ -442,7 +442,7 @@ function DCargo() {
 										label="DWT / Crane"
 										variant="outlined"
 										multiline
-										rows={4}
+										minRows={4}
 										style={{ minWidth: 150 }}
 										value={data.dwt}
 										onChange={(e) => setData({ ...data, dwt: e.target.value })}
@@ -453,7 +453,7 @@ function DCargo() {
 										label="Built"
 										variant="outlined"
 										multiline
-										rows={4}
+										minRows={4}
 										style={{ minWidth: 100 }}
 										value={data.built}
 										onChange={(e) =>

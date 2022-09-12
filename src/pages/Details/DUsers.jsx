@@ -268,16 +268,16 @@ function DUsers() {
 							/>
 
 							<FormControl>
-								<InputLabel id="age-id" style={{ marginLeft: 10 }}>
+								<InputLabel id="admin-id" style={{ marginLeft: 10 }}>
 									Type of Account *
 								</InputLabel>
 								<Select
 									style={{ width: 300 }}
-									labelId="age-id"
 									required
 									disabled={processing}
 									value={data.powers}
 									onChange={(e) => setData({ ...data, powers: e.target.value })}
+									label="Type of Account"
 								>
 									<MenuItem value="admin">Admin</MenuItem>
 									<MenuItem value="none">General User</MenuItem>
@@ -757,6 +757,7 @@ function DUsers() {
 									style={{ width: 300 }}
 									disabled={processing || data.powers === "admin"}
 									required
+									label="Competitors Other Sectors"
 									variant="outlined"
 									value={data.competitors.other_sectors}
 									onChange={(e) =>

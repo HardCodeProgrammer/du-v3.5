@@ -290,7 +290,7 @@ function Cargo() {
 							"Enq Date",
 							"Offer / Bid due date",
 							"Frt Offered",
-							"Followups & Remarks",
+							"Follow ups & Remarks",
 							"PIC",
 						]}
 						key_order={[
@@ -338,7 +338,7 @@ function Cargo() {
 							"Enq Date",
 							"Offer / Bid due date",
 							"Frt Offered",
-							"Followups & Remarks",
+							"Follow ups & Remarks",
 							"PIC",
 						]}
 						key_order={[
@@ -386,7 +386,7 @@ function Cargo() {
 							"Enq Date",
 							"Offer / Bid due date",
 							"Frt Offered",
-							"Followups & Remarks",
+							"Follow ups & Remarks",
 							"PIC",
 						]}
 						key_order={[
@@ -434,7 +434,7 @@ function Cargo() {
 							"Enq Date",
 							"Offer / Bid due date",
 							"Frt Offered",
-							"Followups & Remarks",
+							"Follow ups & Remarks",
 							"PIC",
 						]}
 						key_order={[
@@ -482,7 +482,7 @@ function Cargo() {
 							"Enq Date",
 							"Offer / Bid due date",
 							"Frt Offered",
-							"Followups & Remarks",
+							"Follow ups & Remarks",
 							"PIC",
 						]}
 						key_order={[
@@ -530,7 +530,7 @@ function Cargo() {
 							"Enq Date",
 							"Offer / Bid due date",
 							"Frt Offered",
-							"Followups & Remarks",
+							"Follow ups & Remarks",
 							"PIC",
 						]}
 						key_order={[
@@ -578,7 +578,7 @@ function Cargo() {
 							"Enq Date",
 							"Offer / Bid due date",
 							"Frt Offered",
-							"Followups & Remarks",
+							"Follow ups & Remarks",
 							"PIC",
 						]}
 						key_order={[
@@ -626,7 +626,7 @@ function Cargo() {
 							"Enq Date",
 							"Offer / Bid due date",
 							"Frt Offered",
-							"Followups & Remarks",
+							"Follow ups & Remarks",
 							"PIC",
 						]}
 						key_order={[
@@ -674,7 +674,7 @@ function Cargo() {
 							"Enq Date",
 							"Offer / Bid due date",
 							"Frt Offered",
-							"Followups & Remarks",
+							"Follow ups & Remarks",
 							"PIC",
 						]}
 						key_order={[
@@ -722,7 +722,7 @@ function Cargo() {
 							"Enq Date",
 							"Offer / Bid due date",
 							"Frt Offered",
-							"Followups & Remarks",
+							"Follow ups & Remarks",
 							"PIC",
 						]}
 						key_order={[
