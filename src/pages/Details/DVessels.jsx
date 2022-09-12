@@ -117,7 +117,7 @@ function DVessels() {
 			return;
 		}
 
-		if (!loading && id && !archives) {
+		if (!loading && id && !isArchives) {
 			let vessels = path.reduce((p, c) => {
 				p = p[c];
 				return p;
@@ -138,6 +138,7 @@ function DVessels() {
 
 		// eslint-disable-next-line
 	}, [loading, u_Data, processing]);
+
 
 	function submit() {
 		setProcessing(true);

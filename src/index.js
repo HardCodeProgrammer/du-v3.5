@@ -21,7 +21,6 @@ const store = configureStore({
 	reducer: {
 		root: StoreReducer,
 	},
-	devTools: false,
 });
 
 store.dispatch(startLoading());

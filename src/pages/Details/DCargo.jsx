@@ -332,6 +332,14 @@ function DCargo() {
 										setData({ ...data, shipper: e.target.value })
 									}
 								/>
+								<TextField
+									disabled={processing}
+									label="Lay Can"
+									value={data.lay_can}
+									onChange={(e) =>
+										setData({ ...data, lay_can: e.target.value })
+									}
+								/>
 								<Autocomplete
 									disabled={processing}
 									disablePortal
