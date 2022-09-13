@@ -444,7 +444,6 @@ function DVessels() {
 										: "Follow ups / Remarks"
 								}
 								multiline
-								required
 								rows={5}
 								sx={{ width: "90%" }}
 								value={data.followups}
@@ -460,8 +459,7 @@ function DVessels() {
 											processing ||
 											data.pic === "" ||
 											data.name === "" ||
-											data.cargo === "" ||
-											data.followups === ""
+											data.cargo === "" 
 										}
 										cvar="filled"
 										startIcon={<CheckCircleIcon />}

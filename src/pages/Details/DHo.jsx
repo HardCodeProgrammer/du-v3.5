@@ -274,13 +274,8 @@ function DHo() {
 
 							<TextField
 								disabled={processing}
-								label={
-									path[2] === "enroute"
-										? "Post Voyage Follow Ups"
-										: "Follow ups / Remarks"
-								}
+								label="Follow ups / Remarks"
 								multiline
-								required
 								rows={5}
 								sx={{ width: "90%" }}
 								value={data.comments}
@@ -289,12 +284,7 @@ function DHo() {
 
 							<div className="details-btns">
 								<Button
-									disabled={
-										processing ||
-										data.pic === "" ||
-										data.task === "" ||
-										data.comments === ""
-									}
+									disabled={processing || data.pic === "" || data.task === ""}
 									cvar="filled"
 									startIcon={<CheckCircleIcon />}
 									onClick={submit}

@@ -218,8 +218,30 @@ function DataTable({
 								onClick={() =>
 									ExportExcel(
 										sortData(selected, rows),
-										headings,
-										key_order,
+										target_data.includes("cargo/prospects")
+											? [
+													...headings,
+													"Vessel Name",
+													"DWT/Crane",
+													"Built",
+													"Owners/Source",
+													"Open Area",
+													"Open Date",
+													"Operations Remarks",
+											  ]
+											: headings,
+										target_data.includes("cargo/prospects")
+											? [
+													...key_order,
+													"name",
+													"dwt",
+													"built",
+													"owners",
+													"open",
+													"date",
+													"ops_remarks",
+											  ]
+											: key_order,
 										xlFilename,
 										list
 									)

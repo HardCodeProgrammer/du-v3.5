@@ -278,7 +278,6 @@ function DList() {
 								disabled={processing}
 								label="Remarks"
 								multiline
-								required
 								rows={5}
 								sx={{ width: "90%" }}
 								value={data.remark}
@@ -288,7 +287,7 @@ function DList() {
 							<div className="details-btns">
 								<Button
 									disabled={
-										processing || data.vessel === "" || data.remark === ""
+										processing || data.vessel === "" 
 									}
 									cvar="filled"
 									startIcon={<CheckCircleIcon />}

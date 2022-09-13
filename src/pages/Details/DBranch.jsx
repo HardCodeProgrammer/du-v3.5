@@ -280,7 +280,6 @@ function DBranch() {
 								disabled={processing}
 								label="Status Updates / Comments / Next Follow ups"
 								multiline
-								required
 								rows={5}
 								sx={{ width: "90%" }}
 								value={data.comments}
@@ -289,12 +288,7 @@ function DBranch() {
 
 							<div className="details-btns">
 								<Button
-									disabled={
-										processing ||
-										data.pic === "" ||
-										data.task === "" ||
-										data.comments === ""
-									}
+									disabled={processing || data.pic === "" || data.task === ""}
 									cvar="filled"
 									startIcon={<CheckCircleIcon />}
 									onClick={submit}

@@ -353,7 +353,6 @@ function DCompetitors() {
 								disabled={processing}
 								label="Remarks"
 								multiline
-								required
 								rows={5}
 								sx={{ width: "90%" }}
 								value={data.remarks}
@@ -366,8 +365,7 @@ function DCompetitors() {
 										disabled={
 											processing ||
 											data.pic === "" ||
-											data.name === "" ||
-											data.remarks === ""
+											data.name === "" 
 										}
 										cvar="filled"
 										startIcon={<CheckCircleIcon />}

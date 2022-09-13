@@ -72,10 +72,10 @@ export default function CargoTemplate(data, link) {
 			<br />
 			<p><strong>PIC</strong> : ${data.pic || "-"}</p>
 			<p><strong>Enquiry Date</strong> : ${
-				dateFormat(data.enq_date, "dd/mm/yy") || "-"
+				data.enq_date ? dateFormat(data.enq_date, "dd/mm/yy") : "-"
 			}</p>
 			<p><strong>Offer Bid Due Date and Time</strong> : ${
-				dateFormat(data.offer_bid, "dd/mm/yy HH:MM:ss") || "-"
+				data.offer_bid ? dateFormat(data.offer_bid, "dd/mm/yy HH:MM:ss") : "-"
 			}</p>
 			<p><strong>Source</strong> : ${data.source || "-"}</p>
 			<p><strong>Shipper/Charterer</strong> : ${data.shipper || "-"}</p>

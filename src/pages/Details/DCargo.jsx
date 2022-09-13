@@ -410,7 +410,6 @@ function DCargo() {
 									disabled={processing}
 									label={"Follow ups / Remarks"}
 									multiline
-									required
 									rows={5}
 									sx={{ width: "90%" }}
 									value={data.followups}
@@ -518,8 +517,7 @@ function DCargo() {
 											processing ||
 											data.pic === "" ||
 											data.source === "" ||
-											data.cargo_particulars === "" ||
-											data.followups === ""
+											data.cargo_particulars === "" 
 										}
 										cvar="filled"
 										startIcon={<CheckCircleIcon />}
