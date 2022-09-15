@@ -443,7 +443,7 @@ function DVessels() {
 							/>
 							<TextField
 								disabled={processing}
-								label={path[2] === "fixed" ? "Pre Arr SOP" : "Balance Quantity"}
+								label={path[2] === "fixed" ? "Pre Arr SAP" : "Balance Quantity"}
 								value={data.balance}
 								onChange={(e) => setData({ ...data, balance: e.target.value })}
 							/>

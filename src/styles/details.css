@@ -1,6 +1,6 @@
 .details-header {
 	width: 100%;
-	height: 20%;
+	height: max-content;
 	padding: 10px;
 	padding-left: 20px;
 	background-color: rgb(24, 106, 173);

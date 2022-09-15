@@ -434,7 +434,7 @@ function DCargo() {
 										label="Vessel Name"
 										variant="outlined"
 										multiline
-										rows={4}
+										minRows={4}
 										style={{ minWidth: 275 }}
 										value={data.name}
 										onChange={(e) => setData({ ...data, name: e.target.value })}
@@ -469,7 +469,7 @@ function DCargo() {
 										label="Owners / Source"
 										variant="outlined"
 										multiline
-										rows={4}
+										minRows={4}
 										style={{ minWidth: 200 }}
 										value={data.owners}
 										onChange={(e) =>
@@ -482,7 +482,7 @@ function DCargo() {
 										label="Open Area"
 										variant="outlined"
 										multiline
-										rows={4}
+										minRows={4}
 										style={{ minWidth: 150 }}
 										value={data.open}
 										onChange={(e) => setData({ ...data, open: e.target.value })}
@@ -493,7 +493,7 @@ function DCargo() {
 										label="Open Date"
 										variant="outlined"
 										multiline
-										rows={4}
+										minRows={4}
 										style={{ minWidth: 150 }}
 										value={data.date}
 										onChange={(e) => setData({ ...data, date: e.target.value })}
@@ -504,7 +504,7 @@ function DCargo() {
 										label="Operations Remarks"
 										variant="outlined"
 										multiline
-										rows={4}
+										minRows={4}
 										style={{ minWidth: 350 }}
 										value={data.ops_remarks}
 										onChange={(e) =>

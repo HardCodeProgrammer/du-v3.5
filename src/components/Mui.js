@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Button as Btn, Input as Ipt } from "@mui/material";
+import { Button as Btn, TextField as Ipt } from "@mui/material";
 
 const Button = styled(Btn)(({ cvar = "filled" | "outlined" }) => ({
 	minWidth: 170,
@@ -30,10 +30,8 @@ const Button = styled(Btn)(({ cvar = "filled" | "outlined" }) => ({
 const Input = styled(Ipt)(() => ({
 	width: 300,
 	fontSize: 16,
-	border: `1px solid rgba(182, 182, 182, 0.72)`,
-	borderLeft: "5px solid #5098DA",
-	borderRadius: 5,
-	padding: 10,
+	borderLeft: "6px solid #5098DA",
+	borderRadius: "5px 0px 0px 5px",
 }));
 
 export { Button, Input };

@@ -6,6 +6,7 @@ import {
 	Alert,
 	AlertTitle,
 	CircularProgress,
+	InputAdornment,
 	Slide,
 	Snackbar,
 } from "@mui/material";
@@ -22,7 +23,6 @@ function Login() {
 	const loading = useSelector((state) => state.root.meta.loading);
 	const navigate = useNavigate();
 	document.title = "Login | Daily Updates";
-
 
 	const [msg, setMsg] = useState(null);
 	const [visible, setVisible] = useState(false);
@@ -125,7 +125,10 @@ function Login() {
 					<h1>Welcome Back</h1>
 					<p>Please Login to your account</p>
 				</div>
-				<div className="login-gif-container"></div>
+				<div className="login-gif-container">
+					<div className="login-left-img1"></div>
+					<div className="login-left-img2"></div>
+				</div>
 			</div>
 
 			{/* Right Side */}
@@ -179,13 +182,19 @@ function Login() {
 									onChange={(e) =>
 										setInputs({ ...inputs, password: e.target.value })
 									}
+									InputProps={{
+										endAdornment: (
+											<InputAdornment position="end">
+												<IconButton
+													aria-label="View/Hide Password"
+													onClick={() => setVisible(!visible)}
+												>
+													{visible ? <VisibilityOffIcon /> : <VisibilityIcon />}
+												</IconButton>
+											</InputAdornment>
+										),
+									}}
 								/>
-								<IconButton
-									aria-label="View/Hide Password"
-									onClick={() => setVisible(!visible)}
-								>
-									{visible ? <VisibilityOffIcon /> : <VisibilityIcon />}
-								</IconButton>
 							</div>
 							<div className="log-pass-contents">
 								<Link className="link" to="/forgot-password">

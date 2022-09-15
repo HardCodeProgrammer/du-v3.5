@@ -26,7 +26,7 @@ const convertTable = async (apiArray, fileName, cols, keys, list) => {
          ${keys
 						.map(
 							(key) =>
-								`<td style="border: 1px solid black;">${
+								`<td style="border: 1px solid black; white-space: pre-line; width: 99%; text-align: justify; text-justify: inter-word">${
 									obj[key]
 										? key === "arrived" ||
 										  key === "berthed" ||
@@ -40,7 +40,10 @@ const convertTable = async (apiArray, fileName, cols, keys, list) => {
 											? dateFormat(obj[key], "dd/mm/yy")
 											: key === "month"
 											? dateFormat(obj[key], "mmm yy")
-											: obj[key]
+											: obj[key].replace(
+													`\n`,
+													`<br style="mso-data-placement:same-cell;" />`
+											  )
 										: "-"
 								}</td>`
 						)
