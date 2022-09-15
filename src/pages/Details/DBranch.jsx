@@ -41,6 +41,7 @@ function DBranch() {
 	const target = params["*"];
 
 	const path = target.split("/");
+	const [canEdit, setCanEdit] = useState(false);
 
 	const [processing, setProcessing] = useState(false);
 
@@ -63,13 +64,11 @@ function DBranch() {
 		last_updated: "",
 	});
 
-	/* useEffect(() => {
+	useEffect(() => {
 		if (!u_Data) return;
-		setProcessing(
-			u_Data.vessels[path[0]][path[1] === "fareast" ? "far_east" : path[1]] ===
-				"view_edit"
-		);
-	}, [u_Data]); */
+		setProcessing(u_Data.branch_follow_ups !== "view_edit");
+		setCanEdit(u_Data.branch_follow_ups === "view_edit");
+	}, [u_Data]);
 	useEffect(() => {
 		if (!loading && id) {
 			let followup = path.reduce((p, c) => {
@@ -181,7 +180,7 @@ function DBranch() {
 								<Select
 									onChange={(e) => setData({ ...data, status: e.target.value })}
 									value={data.status || "none"}
-									disabled={processing}
+									disabled={processing || !canEdit}
 									variant="standard"
 									disableUnderline
 									style={{
@@ -216,13 +215,15 @@ function DBranch() {
 								</Select>
 							</Tooltip>
 
-							<Tooltip title={!processing ? "Cancel Edit" : "Edit Task"}>
-								<IconButton onClick={() => setProcessing(!processing)}>
-									<Icon style={{ color: "white" }}>
-										{!processing ? <Close /> : <EditIcon />}
-									</Icon>
-								</IconButton>
-							</Tooltip>
+							{canEdit && (
+								<Tooltip title={!processing ? "Cancel Edit" : "Edit Task"}>
+									<IconButton onClick={() => setProcessing(!processing)}>
+										<Icon style={{ color: "white" }}>
+											{!processing ? <Close /> : <EditIcon />}
+										</Icon>
+									</IconButton>
+								</Tooltip>
+							)}
 						</div>
 
 						<div className="details-content">

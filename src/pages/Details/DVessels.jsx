@@ -49,8 +49,11 @@ function DVessels() {
 	const [processing, setProcessing] = useState(false);
 
 	const id = path[path.length - 2] !== "new" && path[path.length - 2];
+	console.log(id);
 	const tab_index = path[path.length - 1];
 	path.pop();
+
+	const [canEdit, setCanEdit] = useState(true);
 
 	const state = useSelector((s) => s.root.data.vessels);
 	const archives = useSelector((s) => s.root.data.archives.vessels);
@@ -99,8 +102,12 @@ function DVessels() {
 
 	useEffect(() => {
 		if (!u_Data) return;
+		setCanEdit(
+			u_Data.vessels[path[0]][path[1] === "far_east" ? "fareast" : path[1]] ===
+				"view_edit"
+		);
 		setProcessing(
-			u_Data.vessels[path[0]][path[1] === "fareast" ? "far_east" : path[1]] ===
+			u_Data.vessels[path[0]][path[1] === "far_east" ? "fareast" : path[1]] !==
 				"view_edit"
 		);
 		// eslint-disable-next-line
@@ -138,7 +145,6 @@ function DVessels() {
 
 		// eslint-disable-next-line
 	}, [loading, u_Data, processing]);
-
 
 	function submit() {
 		setProcessing(true);
@@ -219,7 +225,7 @@ function DVessels() {
 								<Select
 									onChange={(e) => setData({ ...data, status: e.target.value })}
 									value={data.status || "none"}
-									disabled={processing}
+									disabled={processing || !canEdit}
 									variant="standard"
 									disableUnderline
 									style={{
@@ -254,15 +260,18 @@ function DVessels() {
 								</Select>
 							</Tooltip>
 
-							{!isArchives && (
-								<Tooltip title={!processing ? "Cancel Edit" : "Edit Vessel"}>
-									<IconButton onClick={() => setProcessing(!processing)}>
-										<Icon style={{ color: "white" }}>
-											{!processing ? <Close /> : <EditIcon />}
-										</Icon>
-									</IconButton>
-								</Tooltip>
-							)}
+							{!isArchives &&
+								(canEdit ? (
+									<Tooltip title={!processing ? "Cancel Edit" : "Edit Vessel"}>
+										<IconButton onClick={() => setProcessing(!processing)}>
+											<Icon style={{ color: "white" }}>
+												{!processing ? <Close /> : <EditIcon />}
+											</Icon>
+										</IconButton>
+									</Tooltip>
+								) : (
+									""
+								))}
 						</div>
 
 						<div className="details-content">
@@ -290,6 +299,7 @@ function DVessels() {
 								disabled={processing}
 								value={data.port}
 								disablePortal
+								onChange={(e, newval) => setData({ ...data, port: newval })}
 								freeSolo
 								options={inputPorts.sort()}
 								renderInput={(params) => (
@@ -307,6 +317,7 @@ function DVessels() {
 								disabled={processing}
 								value={data.npc}
 								disablePortal
+								onChange={(e, newval) => setData({ ...data, npc: newval })}
 								freeSolo
 								options={inputPorts.sort()}
 								renderInput={(params) => (
@@ -326,6 +337,7 @@ function DVessels() {
 								disabled={processing}
 								disablePortal
 								value={data.hire}
+								onChange={(e, newval) => setData({ ...data, hire: newval })}
 								freeSolo
 								options={["TC", "VC"].sort()}
 								renderInput={(params) => (
@@ -459,7 +471,7 @@ function DVessels() {
 											processing ||
 											data.pic === "" ||
 											data.name === "" ||
-											data.cargo === "" 
+											data.cargo === ""
 										}
 										cvar="filled"
 										startIcon={<CheckCircleIcon />}

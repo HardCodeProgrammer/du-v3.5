@@ -344,6 +344,9 @@ function DCargo() {
 									disabled={processing}
 									disablePortal
 									value={data.port}
+									onChange={(e, newvalue) => {
+										setData({ ...data, port: newvalue });
+									}}
 									freeSolo
 									options={inputPorts.sort()}
 									renderInput={(params) => (
@@ -351,10 +354,10 @@ function DCargo() {
 											{...params}
 											label="Load Port"
 											value={data.port}
+											onChange={(e) => {
+												setData({ ...data, port: e.target.value });
+											}}
 											sx={{ width: 220 }}
-											onChange={(e) =>
-												setData({ ...data, port: e.target.value })
-											}
 										/>
 									)}
 								/>
@@ -364,6 +367,7 @@ function DCargo() {
 									disablePortal
 									value={data.npc}
 									freeSolo
+									onChange={(e, newval) => setData({ ...data, npc: newval })}
 									options={inputPorts.sort()}
 									renderInput={(params) => (
 										<TextField
@@ -517,7 +521,7 @@ function DCargo() {
 											processing ||
 											data.pic === "" ||
 											data.source === "" ||
-											data.cargo_particulars === "" 
+											data.cargo_particulars === ""
 										}
 										cvar="filled"
 										startIcon={<CheckCircleIcon />}

@@ -68,6 +68,8 @@ function DCompetitors() {
 		"Xiamen",
 	];
 
+	const [canEdit, setCanEdit] = useState(false);
+
 	const state = useSelector((s) => s.root.data.competitors);
 	const archives = useSelector((s) => s.root.data.archives.competitors);
 
@@ -92,13 +94,16 @@ function DCompetitors() {
 		last_updated: "",
 	});
 
-	/* useEffect(() => {
+	useEffect(() => {
 		if (!u_Data) return;
+		setCanEdit(u_Data.competitors[path[0]][path[1]] === "view_edit" );
 		setProcessing(
-			u_Data.vessels[path[0]][path[1] === "fareast" ? "far_east" : path[1]] ===
-				"view_edit"
+			u_Data.competitors[path[0]][path[1]] !== "view_edit"
 		);
-	}, [u_Data]); */
+
+		// eslint-disable-next-line
+	}, [u_Data]);
+
 	useEffect(() => {
 		if (!loading && id && isArchives) {
 			let vessels = path.reduce((p, c) => {
@@ -210,15 +215,18 @@ function DCompetitors() {
 								</p>
 							</div>
 
-							{!isArchives && (
-								<Tooltip title={!processing ? "Cancel Edit" : "Edit Vessel"}>
-									<IconButton onClick={() => setProcessing(!processing)}>
-										<Icon style={{ color: "white" }}>
-											{!processing ? <Close /> : <EditIcon />}
-										</Icon>
-									</IconButton>
-								</Tooltip>
-							)}
+							{!isArchives &&
+								(canEdit ? (
+									<Tooltip title={!processing ? "Cancel Edit" : "Edit Vessel"}>
+										<IconButton onClick={() => setProcessing(!processing)}>
+											<Icon style={{ color: "white" }}>
+												{!processing ? <Close /> : <EditIcon />}
+											</Icon>
+										</IconButton>
+									</Tooltip>
+								) : (
+									""
+								))}
 						</div>
 
 						<div className="details-content">
@@ -362,11 +370,7 @@ function DCompetitors() {
 							<div className="details-btns">
 								{!isArchives && (
 									<Button
-										disabled={
-											processing ||
-											data.pic === "" ||
-											data.name === "" 
-										}
+										disabled={processing || data.pic === "" || data.name === ""}
 										cvar="filled"
 										startIcon={<CheckCircleIcon />}
 										onClick={submit}

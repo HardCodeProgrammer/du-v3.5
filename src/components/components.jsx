@@ -120,6 +120,7 @@ function DataTable({
 			!path.includes("branch_follow_ups") &&
 			!path.includes("prospects")
 		) {
+			if (path.includes("vessels")) path.pop();
 			table_edit = path.reduce((p, c) => {
 				return p[c === "far_east" ? "fareast" : c];
 			}, user);
@@ -136,7 +137,6 @@ function DataTable({
 		) {
 			table_edit = user.cargo.prospects;
 		}
-
 		setCan_edit(user.powers === "admin" || table_edit === "view_edit");
 
 		// eslint-disable-next-line

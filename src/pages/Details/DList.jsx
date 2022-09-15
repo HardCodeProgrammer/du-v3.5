@@ -31,6 +31,7 @@ function DList() {
 	const u_Data = useSelector((s) => s.root.data.users[user]);
 
 	const [opens_bar, setOpens_bar] = useState(false);
+	const [canEdit, setCanEdit] = useState(false);
 
 	const dispatch = useDispatch();
 
@@ -67,14 +68,12 @@ function DList() {
 		last_updated: "",
 	});
 
-	/* 	useEffect(() => {
+	useEffect(() => {
 		if (!u_Data) return;
-		setProcessing(
-			u_Data.vessels[path[0]][path[1] === "fareast" ? "far_east" : path[1]] ===
-				"view_edit"
-		);
+		setCanEdit(u_Data.vessel_list[path[0]] === "view_edit");
+		setProcessing(u_Data.vessel_list[path[0]] !== "view_edit");
 		// eslint-disable-next-line
-	}, [u_Data]); */
+	}, [u_Data]);
 
 	useEffect(() => {
 		if (!loading && id) {
@@ -174,13 +173,15 @@ function DList() {
 								</p>
 							</div>
 
-							<Tooltip title={!processing ? "Cancel Edit" : "Edit Vessel"}>
-								<IconButton onClick={() => setProcessing(!processing)}>
-									<Icon style={{ color: "white" }}>
-										{!processing ? <Close /> : <EditIcon />}
-									</Icon>
-								</IconButton>
-							</Tooltip>
+							{canEdit && (
+								<Tooltip title={!processing ? "Cancel Edit" : "Edit Vessel"}>
+									<IconButton onClick={() => setProcessing(!processing)}>
+										<Icon style={{ color: "white" }}>
+											{!processing ? <Close /> : <EditIcon />}
+										</Icon>
+									</IconButton>
+								</Tooltip>
+							)}
 						</div>
 
 						<div className="details-content">
@@ -286,9 +287,7 @@ function DList() {
 
 							<div className="details-btns">
 								<Button
-									disabled={
-										processing || data.vessel === "" 
-									}
+									disabled={processing || data.vessel === ""}
 									cvar="filled"
 									startIcon={<CheckCircleIcon />}
 									onClick={submit}
