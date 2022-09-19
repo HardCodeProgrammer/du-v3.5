@@ -96,10 +96,8 @@ function DCompetitors() {
 
 	useEffect(() => {
 		if (!u_Data) return;
-		setCanEdit(u_Data.competitors[path[0]][path[1]] === "view_edit" );
-		setProcessing(
-			u_Data.competitors[path[0]][path[1]] !== "view_edit"
-		);
+		setCanEdit(u_Data.competitors[path[0]] === "view_edit");
+		setProcessing(u_Data.competitors[path[0]] !== "view_edit");
 
 		// eslint-disable-next-line
 	}, [u_Data]);
