@@ -137,10 +137,18 @@ function DCompetitors() {
 
 	function submit() {
 		setProcessing(true);
+		let _path = "";
+
+		if (path.length > 2) {
+			_path = `competitors/${path[0]}${path[1]}/${id}`;
+		} else {
+			_path = `competitors/${path[0]}/${id}`;
+		}
+
 		if (id) {
 			dispatch(
 				editData({
-					path: `competitors/${path[0]}${path[1] ? `/${path[1]}` : ""}/${id}`,
+					path: _path,
 					data: {
 						...data,
 						last_updated: `${dateFormat(
@@ -150,7 +158,7 @@ function DCompetitors() {
 					},
 				})
 			);
-			Neon.put(`/competitors/${path[0]}${path[1] ? `/${path[1]}` : ""}/${id}`, {
+			Neon.put(_path, {
 				...data,
 				last_updated: `${dateFormat(new Date(), "dd-mmm-yyyy HH:MM:ss")} by ${
 					u_Data.fullname
@@ -166,13 +174,17 @@ function DCompetitors() {
 
 			dispatch(
 				addData({
-					path: `competitors/${path[0]}${path[1] ? `/${path[1]}` : ""}/${_id}`,
+					path: `competitors/${path[0]}${
+						path[1] !== "new" ? `/${path[1]}` : ""
+					}/${_id}`,
 					data: data,
 				})
 			);
 
 			Neon.put(
-				`/competitors/${path[0]}${path[1] ? `/${path[1]}` : ""}/${_id}`,
+				`/competitors/${path[0]}${
+					path[1] !== "new" ? `/${path[1]}` : ""
+				}/${_id}`,
 				data
 			)
 				.then((_) => {

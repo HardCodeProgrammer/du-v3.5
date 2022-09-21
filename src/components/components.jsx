@@ -121,6 +121,7 @@ function DataTable({
 			!path.includes("prospects")
 		) {
 			if (path.includes("vessels")) path.pop();
+			if (path.includes("competitors") && path.length > 2) path.pop();
 			table_edit = path.reduce((p, c) => {
 				return p[c === "far_east" ? "fareast" : c];
 			}, user);
@@ -325,7 +326,7 @@ function DataTable({
 									r={r}
 									followups={followups}
 									list={list}
-									can_edit={can_edit || r.u_id === id}
+									can_edit={can_edit}
 									id={r.id}
 									user={id}
 									target={target_data}
