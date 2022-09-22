@@ -142,10 +142,11 @@ function DCargo() {
 		let _path = "";
 
 		if (path.length > 2) {
-			_path = `cargo/${path[0]}${path[1]}/${id}`;
+			_path = `cargo/${path[0]}/${path[1]}/${id}`;
 		} else {
 			_path = `cargo/${path[0]}/${id}`;
 		}
+
 		if (id) {
 			dispatch(
 				editData({
