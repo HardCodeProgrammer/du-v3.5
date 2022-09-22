@@ -337,6 +337,7 @@ function DCompetitors() {
 								disabled={processing}
 								value={data.port}
 								disablePortal
+								onChange={(e, n) => setData({ ...data, port: n })}
 								freeSolo
 								options={inputPorts.sort()}
 								renderInput={(params) => (
@@ -354,6 +355,7 @@ function DCompetitors() {
 								disabled={processing}
 								value={data.npc}
 								disablePortal
+								onChange={(e, n) => setData({ ...data, npc: n })}
 								freeSolo
 								options={inputPorts.sort()}
 								renderInput={(params) => (
