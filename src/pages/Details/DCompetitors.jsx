@@ -140,7 +140,7 @@ function DCompetitors() {
 		let _path = "";
 
 		if (path.length > 2) {
-			_path = `competitors/${path[0]}${path[1]}/${id}`;
+			_path = `competitors/${path[0]}/${path[1]}/${id}`;
 		} else {
 			_path = `competitors/${path[0]}/${id}`;
 		}

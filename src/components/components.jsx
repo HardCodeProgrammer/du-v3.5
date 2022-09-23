@@ -161,7 +161,8 @@ function DataTable({
 		let sorted_data;
 
 		sorted_data = raw_data.sort(function (a, b) {
-			if (!a[key] || !b[key]) return 1;
+			if (!a[key]) return 1;
+			if (!b[key]) return -1;
 			if (key === "dwt") {
 				if (Number(a[key]) < Number(b[key])) return -1;
 			} else if (
