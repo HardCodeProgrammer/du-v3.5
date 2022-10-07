@@ -102,10 +102,16 @@ function DataTable({
 
 	const Search = (data) => {
 		return data.filter((row) =>
-			Filters.some(
-				(filter) =>
-					row[filter].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
-			)
+			Filters.some((filter) => {
+				if (filter === "month")
+					return (
+						dateFormat(row[filter], "mmm yy").toLowerCase().indexOf(q.toLowerCase()) > -1
+					);
+				else
+					return (
+						row[filter].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
+					);
+			})
 		);
 	};
 
