@@ -56,6 +56,30 @@ export const StoreReducer = createSlice({
 				return p[c];
 			}, state.data)[o_last];
 		},
+		fetchVessels: (state, action) => {
+			state.data.vessels = action.payload;
+		},
+		fetchCargo: (state, action) => {
+			state.data.cargo = action.payload;
+		},
+		fetchCompetitors: (state, action) => {
+			state.data.competitors = action.payload;
+		},
+		fetchBranch: (state, action) => {
+			state.data.branch_follow_ups = action.payload;
+		},
+		fetchHO: (state, action) => {
+			state.data.ho_follow_ups = action.payload;
+		},
+		fetchArchives: (state, action) => {
+			state.data.archives = action.payload;
+		},
+		fetchVesselList: (state, action) => {
+			state.data.vessel_list = action.payload;
+		},
+		fetchUsers: (state, action) => {
+			state.data.users = action.payload;
+		},
 	},
 });
 
@@ -69,6 +93,15 @@ export const {
 	deleteData,
 	moveData,
 	setError,
+	
+	fetchArchives,
+	fetchBranch,
+	fetchCargo,
+	fetchCompetitors,
+	fetchHO,
+	fetchVessels,
+	fetchVesselList,
+	fetchUsers,
 } = StoreReducer.actions;
 
 export default StoreReducer.reducer;

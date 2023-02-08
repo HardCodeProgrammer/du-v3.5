@@ -16,7 +16,7 @@ const api = axios.create({
 	headers: {
 		"Auth-Secret": AUTH_SECRET,
 	},
-	timeout: 20000,
+	timeout: 100000,
 });
 
 const Neon = {
